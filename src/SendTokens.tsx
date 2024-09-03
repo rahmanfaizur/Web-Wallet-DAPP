@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from "@solana/web3.js";
 
@@ -50,7 +50,6 @@ export function SendTokens() {
             setAmount('');
         } catch (error) {
             console.error('Error:', error);
-            setStatus(`Error: ${error.message}`);
         }
     }
 

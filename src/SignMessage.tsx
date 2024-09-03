@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { ed25519 } from '@noble/curves/ed25519';
 import bs58 from 'bs58';
@@ -26,9 +26,9 @@ export function SignMessage() {
             }
 
             setSignature(signatureBase58);
-        } catch (err) {
-            setError(err.message);
-        }
+        }catch (err) {
+            setError((err as Error).message);
+        }        
     }
 
     function copyToClipboard(text: string) {
